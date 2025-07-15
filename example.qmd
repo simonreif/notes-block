@@ -1,0 +1,49 @@
+---
+title: "Notes-block Example"
+format: pdf
+header-includes:
+   - \usepackage{setspace}
+filters:
+  - notes-block
+cap-location: top
+---
+
+## Output with notes
+
+This filter makes it easy to have figure and table notes. For example for @tbl-test and @fig-test.
+
+:::: {#tbl-test tbl-pos="h" tbl-cap="This is a table"}
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(gt)
+head(mtcars) |> gt()
+```
+
+::: {.notes-block}
+**Notes:** These are cars and the table notes are the default.
+:::
+::::
+
+Here is some explanation on what you did here.
+
+:::: {#fig-test fig-pos="h" fig-cap="This is a figure"}
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(ggplot2)
+df <- data.frame(x = 1:10, y = (1:10)^2)
+ggplot(df, aes(x, y)) + 
+  geom_line() +
+  theme_minimal()
+```
+
+::: {.notes-block width = "0.4" above = "-3" below = "10"}
+**Notes:** This plot shows the quadratic relationship between x and y. Also, the settings for the notes are different from the default. We can also use the standard referencing for example if this would be somehow related to @tbl-test.
+:::
+::::
+
