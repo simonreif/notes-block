@@ -14,7 +14,7 @@ local function parse_numeric(attr, default)
 end
 
 function Div(div)
-  if div.classes:includes('notes-block') and FORMAT:match 'latex' then
+if div.classes:includes('notes-block') and (FORMAT:match('latex') or FORMAT:match('beamer')) then
     -- Read and parse numeric values
     local width_factor = parse_numeric(div.attributes["width"], DEFAULT_WIDTH)
     local above_pt = parse_numeric(div.attributes["above"], DEFAULT_VSPACE_ABOVE)
