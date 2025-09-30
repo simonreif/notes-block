@@ -1,11 +1,11 @@
-# Notes-block Extension For Quarto
+# notes-block Extension For Quarto
 
 This extension makes it easy to add table and figure notes to Quarto output. At the moment this works only for PDF outputs from LaTeX.
 
 ## Installing
 
 ```bash
-quarto add https://github.com/simonreif/notes-block
+quarto add simonreif/notes-block
 ```
 
 This will install the extension under the `_extensions` subdirectory.
